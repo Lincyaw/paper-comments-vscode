@@ -2,10 +2,16 @@
   "name": "paper-comments",
   "displayName": "Paper Comments",
   "description": "Show paper review comments as VSCode diagnostics from .paper-comments.jsonl",
+  "publisher": "lincyaw",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lincyaw/paper-comments-vscode"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
+  "icon": "icon.png",
   "categories": [
     "Linters"
   ],
