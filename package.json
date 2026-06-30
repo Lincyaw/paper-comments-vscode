@@ -6,14 +6,19 @@
   "engines": {
     "vscode": "^1.80.0"
   },
-  "categories": ["Linters"],
-  "activationEvents": ["workspaceContains:.paper-comments.jsonl"],
+  "categories": [
+    "Linters"
+  ],
+  "activationEvents": [
+    "workspaceContains:.paper-comments.jsonl"
+  ],
   "main": "./out/extension.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -watch"
   },
   "devDependencies": {
+    "@types/node": "^26.0.1",
     "@types/vscode": "^1.80.0",
     "typescript": "^5.0.0"
   }
