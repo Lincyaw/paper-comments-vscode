@@ -1,0 +1,3 @@
+{"file":"paper.tex","line":2,"severity":"warning","message":"读者负担较重：开头一句塞了5个概念（AI infrastructure, CI pipelines, DL frameworks, heterogeneous accelerators, distributed runtime systems）。\n\n建议：三个并列项对后文诊断讨论没有直接支撑，考虑简化为总括词如 \"complex AI software-hardware stacks\"。","addressed":false}
+{"file":"paper.tex","line":3,"severity":"info","message":"清晰，自然过渡到 problem。\"multi-layer\" 为后文 cross-file dependency 埋了伏笔。没有问题。","addressed":true}
+{"file":"paper.tex","line":4,"severity":"warning","message":"\"two-dimensional scaling challenge\" 抽象度高，读者需要读完长句才能回填两个维度。\n\n\"execution-connected artifacts\" 是新造复合修饰语，读者第一次遇到需要猜测含义。","addressed":false}

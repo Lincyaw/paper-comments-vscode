@@ -1,0 +1,20 @@
+{
+  "name": "paper-comments",
+  "displayName": "Paper Comments",
+  "description": "Show paper review comments as VSCode diagnostics from .paper-comments.jsonl",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Linters"],
+  "activationEvents": ["workspaceContains:.paper-comments.jsonl"],
+  "main": "./out/extension.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -watch"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  }
+}
