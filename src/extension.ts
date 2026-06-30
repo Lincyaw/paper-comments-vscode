@@ -11,6 +11,9 @@ interface PaperComment {
 	severity?: 'error' | 'warning' | 'info' | 'hint';
 	message: string;
 	addressed?: boolean;
+	category?: string;
+	pass?: string;
+	agent?: string;
 }
 
 function toSeverity(s?: string): vscode.DiagnosticSeverity {
@@ -81,13 +84,17 @@ function buildDiscussPrompt(comment: PaperComment, sourceLine: string): string {
 		`I want to discuss this review comment on my paper.`,
 		``,
 		`File: ${comment.file}, Line ${comment.line}`,
+	];
+	if (comment.category) parts.push(`Category: ${comment.category}`);
+	if (comment.agent) parts.push(`Agent: ${comment.agent} (pass ${comment.pass ?? '?'})`);
+	parts.push(
 		`Source text: ${sourceLine.trim()}`,
 		``,
 		`Review comment (severity: ${comment.severity ?? 'info'}):`,
 		comment.message,
 		``,
 		`What do you think? Should I address this, and if so, how?`,
-	];
+	);
 	return parts.join('\n');
 }
 
@@ -130,6 +137,9 @@ function refresh(jsonlPath: string, workspaceRoot: string, collection: vscode.Di
 		const range = new vscode.Range(lineNum, 0, lineNum, Number.MAX_SAFE_INTEGER);
 		const diag = new vscode.Diagnostic(range, c.message, toSeverity(c.severity));
 		diag.source = DIAG_SOURCE;
+		if (c.category) {
+			diag.code = c.category;
+		}
 
 		const filePath = c.file;
 		if (!byFile.has(filePath)) byFile.set(filePath, []);
