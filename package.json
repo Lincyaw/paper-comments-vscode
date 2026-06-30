@@ -3,7 +3,7 @@
   "displayName": "Paper Comments",
   "description": "Show paper review comments as VSCode diagnostics from .paper-comments.jsonl",
   "publisher": "lincyaw",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Lincyaw/paper-comments-vscode"
